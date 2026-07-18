@@ -1,10 +1,24 @@
+import os
 import joblib
 import pandas as pd
 from fastapi import HTTPException
 
-modelo = joblib.load("modelo_random_forest.pkl")
-scaler = joblib.load("scaler.pkl")
-features = joblib.load("features.pkl")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+
+model = joblib.load(
+    os.path.join(BASE_DIR, "modelo_random_forest.pkl")
+)
+
+
+scaler = joblib.load(
+    os.path.join(BASE_DIR, "scaler.pkl")
+)
+
+
+features = joblib.load(
+    os.path.join(BASE_DIR, "features.pkl")
+)
 
 numeric = [
         "Air temperature [K]",
@@ -37,7 +51,7 @@ def predict(data):
 
         df[numeric] = scaler.transform(df[numeric])
 
-        prediction = modelo.predict(df)[0]
+        prediction = model.predict(df)[0]
 
         status = "Manutenção Necessária" if prediction else "Sem Necessidade de Manutenção"
 
@@ -48,7 +62,7 @@ def predict(data):
             "Continuar monitorando o equipamento."
         )
 
-        probability = modelo.predict_proba(df)[0][1]
+        probability = model.predict_proba(df)[0][1]
 
         risk = "Alto" if prediction else "Baixo"
 
