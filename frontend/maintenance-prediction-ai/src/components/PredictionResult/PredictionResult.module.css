@@ -1,0 +1,258 @@
+.container {
+  padding: 28px;
+  border-radius: var(--border-radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  border-left-width: 6px;
+  transition: all var(--transition-normal);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 16px;
+}
+
+.headerTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.headerTitle h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border: 1px solid currentColor;
+}
+
+.body {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 28px;
+  align-items: center;
+}
+
+@media (max-width: 640px) {
+  .body {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+}
+
+/* Gauge styling */
+.gaugeSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gaugeWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+}
+
+.svg {
+  transform: rotate(-90deg);
+}
+
+.gaugeCircle {
+  transition: stroke-dashoffset var(--transition-slow);
+}
+
+.gaugeText {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+}
+
+.probabilityVal {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.probabilityLbl {
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-top: 2px;
+  line-height: 1.2;
+}
+
+/* Details Section */
+.detailsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.detailTitle {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.statusText {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.messageText, .recommendationText {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.recommendationText {
+  font-weight: 500;
+}
+
+/* Color schemes */
+.lowRisk {
+  border-left-color: var(--color-success);
+  color: var(--color-success);
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.05);
+}
+.lowRisk .statusText {
+  color: var(--color-success);
+}
+.lowRisk .badge {
+  background: var(--color-success-bg);
+  color: var(--color-success);
+}
+
+.mediumRisk {
+  border-left-color: var(--color-warning);
+  color: var(--color-warning);
+  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.05);
+}
+.mediumRisk .statusText {
+  color: var(--color-warning);
+}
+.mediumRisk .badge {
+  background: var(--color-warning-bg);
+  color: var(--color-warning);
+}
+
+.highRisk {
+  border-left-color: var(--color-danger);
+  color: var(--color-danger);
+  box-shadow: 0 4px 20px rgba(244, 63, 94, 0.05);
+}
+.highRisk .statusText {
+  color: var(--color-danger);
+}
+.highRisk .badge {
+  background: var(--color-danger-bg);
+  color: var(--color-danger);
+  animation: pulse-border 2s infinite;
+}
+
+/* Footer Telemetries */
+.footer {
+  border-top: 1px solid var(--border-color);
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.telemetryTitle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.telemetryGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .telemetryGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .telemetryGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.telItem {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.telLabel {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.telValue {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 2px;
+}
+
+@keyframes pulse-border {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(244, 63, 94, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(244, 63, 94, 0.6);
+  }
+}
