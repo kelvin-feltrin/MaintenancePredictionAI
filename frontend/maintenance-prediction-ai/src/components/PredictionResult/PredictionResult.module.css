@@ -76,8 +76,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 120px;
-  height: 120px;
+  width: 130px;
+  height: 130px;
 }
 
 .svg {
@@ -95,7 +95,8 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  width: 100%;
+  width: 80px;
+  margin: auto;
   padding: 10px;
 }
 
@@ -136,7 +137,8 @@
   font-weight: 700;
 }
 
-.messageText, .recommendationText {
+.messageText,
+.recommendationText {
   font-size: 0.9rem;
   line-height: 1.5;
   color: var(--text-secondary);
@@ -152,9 +154,11 @@
   color: var(--color-success);
   box-shadow: 0 4px 20px rgba(16, 185, 129, 0.05);
 }
+
 .lowRisk .statusText {
   color: var(--color-success);
 }
+
 .lowRisk .badge {
   background: var(--color-success-bg);
   color: var(--color-success);
@@ -165,9 +169,11 @@
   color: var(--color-warning);
   box-shadow: 0 4px 20px rgba(245, 158, 11, 0.05);
 }
+
 .mediumRisk .statusText {
   color: var(--color-warning);
 }
+
 .mediumRisk .badge {
   background: var(--color-warning-bg);
   color: var(--color-warning);
@@ -178,9 +184,11 @@
   color: var(--color-danger);
   box-shadow: 0 4px 20px rgba(244, 63, 94, 0.05);
 }
+
 .highRisk .statusText {
   color: var(--color-danger);
 }
+
 .highRisk .badge {
   background: var(--color-danger-bg);
   color: var(--color-danger);
@@ -249,9 +257,12 @@
 }
 
 @keyframes pulse-border {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: 0 0 10px rgba(244, 63, 94, 0.3);
   }
+
   50% {
     box-shadow: 0 0 20px rgba(244, 63, 94, 0.6);
   }

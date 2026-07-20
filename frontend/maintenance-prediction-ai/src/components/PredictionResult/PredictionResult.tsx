@@ -35,7 +35,7 @@ export const PredictionResult: React.FC<PredictionResultProps> = ({
   }
 
   // Circular gauge settings
-  const radius = 60;
+  const radius = 70;
   const stroke = 10;
   const normalizedRadius = radius - stroke * 2;
   const circumference = normalizedRadius * 2 * Math.PI;
