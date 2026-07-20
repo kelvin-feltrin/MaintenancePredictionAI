@@ -10,7 +10,7 @@
 ![Vercel](https://img.shields.io/badge/Frontend-Vercel-000000?logo=vercel)
 ![Render](https://img.shields.io/badge/Backend-Render-46E3B7?logo=render)
 
-Leia em [Português]()
+Leia em [Português](https://github.com/kelvin-feltrin/MaintenancePredictionAI/blob/main/README-pt.md)
 
 ### Intelligent Predictive Maintenance System powered by Machine Learning
 
