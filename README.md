@@ -50,19 +50,11 @@ The project combines **Machine Learning**, **REST APIs**, and a modern **React**
 
 > Operational overview with KPIs, charts and recent predictions.
 
-<p align="center">
-<img src="./docs/dashboard.png" width="900">
-</p>
-
 ---
 
 ### Prediction
 
 > Submit telemetry parameters and receive a maintenance prediction in real time.
-
-<p align="center">
-<img src="./docs/prediction.png" width="900">
-</p>
 
 ---
 
