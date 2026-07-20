@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import type { PredictionRequest } from '../../types/prediction';
-import { FiCpu, FiInfo } from 'react-icons/fi';
+import { FiAlertTriangle, FiCpu, FiInfo } from 'react-icons/fi';
 import styles from './PredictionForm.module.css';
 
 interface PredictionFormProps {
@@ -11,11 +11,11 @@ interface PredictionFormProps {
 export const PredictionForm: React.FC<PredictionFormProps> = ({ onSubmit, loading }) => {
   const [equipmentName, setEquipmentName] = useState('Torno CNC-104');
   const [type, setType] = useState<'L' | 'M' | 'H'>('L');
-  
+
   // Use Celsius in the UI, convert to Kelvin before submitting
   const [airTempC, setAirTempC] = useState('25');
   const [procTempC, setProcTempC] = useState('35');
-  
+
   const [rotationalSpeed, setRotationalSpeed] = useState('1500');
   const [torque, setTorque] = useState('40');
   const [toolWear, setToolWear] = useState('60');
@@ -146,7 +146,7 @@ export const PredictionForm: React.FC<PredictionFormProps> = ({ onSubmit, loadin
 
         <div className={styles.field}>
           <label htmlFor="type">
-            Tipo de Variante 
+            Tipo de Variante
             <span className={styles.infoTooltip} title="L (Low), M (Medium), H (High) representam o grau de qualidade/tolerância do maquinário.">
               <FiInfo />
             </span>
@@ -239,6 +239,10 @@ export const PredictionForm: React.FC<PredictionFormProps> = ({ onSubmit, loadin
       <button type="submit" className={styles.submitBtn} disabled={loading}>
         {loading ? 'Processando Previsão...' : 'Executar Análise Preditiva'}
       </button>
+
+      <div className={styles.field}>
+        <label>ATENÇÃO: Por se tratar de uma aplicação com fins acadêmicos, a primeira requisição pode demorar para responder devido à limitação da hospedagem gratuita.</label>
+      </div>
     </form>
   );
 };

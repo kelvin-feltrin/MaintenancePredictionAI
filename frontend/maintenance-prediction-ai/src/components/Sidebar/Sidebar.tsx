@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { FiTrendingUp, FiCpu, FiClock, FiBarChart2, FiChevronLeft, FiChevronRight, FiAlertTriangle } from 'react-icons/fi';
+import { FiCpu, FiBarChart2, FiChevronLeft, FiChevronRight, FiAlertTriangle } from 'react-icons/fi';
 import styles from './Sidebar.module.css';
 
 interface SidebarProps {
@@ -16,8 +16,6 @@ export const Sidebar: React.FC<SidebarProps> = ({ isCollapsed, setIsCollapsed })
   const navItems = [
     { path: '/', label: 'Dashboard', icon: <FiBarChart2 /> },
     { path: '/predict', label: 'Nova Previsão', icon: <FiCpu /> },
-    { path: '/history', label: 'Histórico', icon: <FiClock /> },
-    { path: '/analytics', label: 'Análise de Ativos', icon: <FiTrendingUp /> },
   ];
 
   return (
