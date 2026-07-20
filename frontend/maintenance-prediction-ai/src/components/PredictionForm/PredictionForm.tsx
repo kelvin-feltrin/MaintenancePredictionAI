@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import type { PredictionRequest } from '../../types/prediction';
-import { FiAlertTriangle, FiCpu, FiInfo } from 'react-icons/fi';
+import { FiCpu, FiInfo } from 'react-icons/fi';
 import styles from './PredictionForm.module.css';
 
 interface PredictionFormProps {
